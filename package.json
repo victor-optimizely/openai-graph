@@ -1,0 +1,29 @@
+{
+  "name": "openai-graph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/server.js"
+  },  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victor-optimizely/openai-graph.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victor-optimizely/openai-graph/issues"
+  },
+  "homepage": "https://github.com/victor-optimizely/openai-graph#readme",
+  "dependencies": {
+    "@apollo/server": "^4.5.0",
+    "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.10",
+    "typescript": "^5.0.2"
+  }
+}
