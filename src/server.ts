@@ -31,7 +31,7 @@ const server = new ApolloServer<ContextValue>({
 //  2. installs your ApolloServer instance as middleware
 //  3. prepares your app to handle incoming requests
 const { url } = await startStandaloneServer(server, {
-  listen: { port: 8000 },
+  listen: { port: process.env.PORT as any || 8000 },
   context: async () => {
     return {
       dataSources: {
