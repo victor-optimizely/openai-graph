@@ -7,8 +7,7 @@
   "scripts": {
     "compile": "tsc",
     "lint": "npx eslint .",
-    "start:local": "npx eslint . && npm run compile && node ./dist/server.js",
-    "start": "node ./dist/server.js",
+    "start": "npm run compile && node ./dist/server.js",
     "build:manual": "az acr build --registry epiIdentityContainerRegistry --image openai-graph ."
   },
   "repository": {
