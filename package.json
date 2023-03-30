@@ -7,7 +7,9 @@
   "scripts": {
     "compile": "tsc",
     "lint": "npx eslint .",
-    "start": "npx eslint . && npm run compile && node ./dist/server.js"
+    "start:local": "npx eslint . && npm run compile && node ./dist/server.js",
+    "start": "node ./dist/server.js",
+    "build:manual": "az acr build --registry epiIdentityContainerRegistry --image openai-graph ."
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "@apollo/datasource-rest": "^5.0.2",
     "@apollo/server": "^4.5.0",
     "dotenv": "^16.0.3",
+    "esm": "^3.2.25",
     "graphql": "^16.6.0",
     "openai": "^3.2.1"
   },
