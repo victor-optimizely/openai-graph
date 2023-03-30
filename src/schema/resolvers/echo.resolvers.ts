@@ -1,7 +1,8 @@
-export const EchoResolvers = {
+export const GPTResolvers = {
     Query: {
-        echo: (_, { text }: { text: string }) => {
-            return `ECHOOOO ${text}`;
+        chat: async (_, { text }: { text: string }, { dataSources }) => {
+            const data = await dataSources.openAIApi.getGPTResponse(text);
+            return data;
         }
     }
 }

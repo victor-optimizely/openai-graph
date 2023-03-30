@@ -1,5 +1,5 @@
 export const queries = `
     type Query {
-        echo(text: String!): String!
+        chat(text: String!): String!
     }
 `;
