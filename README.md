@@ -8,6 +8,10 @@ OpenAI APIs for the purpose of creating an interactive chat bot
 related to Optimizely's products and offerings.
 
 ### Local Development
+Make a .env file from .env.example and add OpenAI API key
+```bash
+cp .env.example .env
+```
 Setting up the project and running it is as simple as installing
 the dependencies and running the application:
 ```bash
@@ -28,11 +32,11 @@ imports.
 
 ### Queries
 
-#### Echo
-A simple query that prepends some "ECHO" string to the value provided:
+#### Chat
+ChatGPT query message:
 ```text
-query echo {
-   echo(text: "Hello!")
+query chat {
+   chat(text: "Hello!")
 }
 ```
 
