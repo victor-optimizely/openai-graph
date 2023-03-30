@@ -1,5 +1,5 @@
-import { GPTResolvers } from "./echo.resolvers.js";
+import { OpenAIResolvers } from "./OpenAI.resolvers.js";
 
 export const resolvers = [
-    GPTResolvers
+    OpenAIResolvers
 ];

@@ -1,5 +1,5 @@
 export const queries = `
     type Query {
-        chat(text: String!): String!
+        ask(text: String!, model: String = "gpt-3.5-turbo"): Response
     }
 `;
