@@ -1,24 +1,27 @@
 import * as dotenv from 'dotenv'
-dotenv.config()
+dotenv.config();
+
+import { OpenAIApi } from "openai";
+import { openAI } from './openAI.js';
+
+import { PineconeClient } from "@pinecone-database/pinecone";
+import { pinecone } from './pinecone.js';
+
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
+
 import { typeDefs } from "./schema/types/typeDefs.js";
 import { resolvers } from "./schema/resolvers/resolvers.js";
-import { Configuration, OpenAIApi } from "openai";
 
-if (!process.env.OPENAI_API_KEY) {
+
+if (!process.env.OPENAI_API_KEY || !process.env.PINECONE_API_KEY) {
   throw new Error('Invalid Configuration. Env variables missing!');
 }
-
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openAI = new OpenAIApi(configuration);
-
 
 interface ContextValue {
   dataSources: {
     openAI: OpenAIApi
+    pinecone: PineconeClient
   };
 }
 const server = new ApolloServer<ContextValue>({
@@ -35,7 +38,8 @@ const { url } = await startStandaloneServer(server, {
   context: async () => {
     return {
       dataSources: {
-        openAI
+        openAI,
+        pinecone,
       }
     }
   }

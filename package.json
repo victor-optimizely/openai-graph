@@ -24,10 +24,13 @@
   "dependencies": {
     "@apollo/datasource-rest": "^5.0.2",
     "@apollo/server": "^4.5.0",
+    "@pinecone-database/pinecone": "0.0.12",
     "dotenv": "^16.0.3",
     "esm": "^3.2.25",
+    "gpt-3-encoder": "^1.1.4",
     "graphql": "^16.6.0",
-    "openai": "^3.2.1"
+    "openai": "^3.2.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.10",
